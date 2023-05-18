@@ -1,5 +1,6 @@
 <?php 
 
+/* Ligação ente o PHP e o banco de dados */
 /* Parâmetros de acesso ao servidor de banco de dados MySQL */
 $servidor = "localhost";
 $usuario = "root";
@@ -16,7 +17,8 @@ mysqli_set_charset($conexao, "utf8");
 if( !$conexao ){
     die(mysqli_connect_error($conexao));
 /* Senão, beijos e abraços */
-} else {
+} /*else {
     echo "<p>Beleza, banco conectado!</p>";
-}
+} */
+
 ?>
