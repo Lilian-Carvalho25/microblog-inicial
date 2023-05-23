@@ -24,10 +24,16 @@ if(isset($_POST['atualizar'])){
 	} else {
 		// Senão, pegue a nova senha e codifique
 		$senha = password_hash($_POST['senha'], PASSWORD_DEFAULT);
-	}
 
-	echo $senha;
-}
+	} // Fim if/else senha
+
+	// Chamando a função para atualizar e passamos os dados capturados
+	atualizarUsuario($conexao, $id, $nome, $email, $senha, $tipo);
+
+	// Redirecionando para a página com a lista de usuários
+	header("location:usuarios.php");
+
+} // Fim if/issset botão
 ?>
 
 <div class="row">
