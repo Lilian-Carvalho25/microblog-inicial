@@ -34,6 +34,17 @@ function login ($id, $nome, $tipo) {
     $_SESSION['id'] = $id;
     $_SESSION['nome'] = $nome;
     $_SESSION['tipo'] = $tipo;
-    
-    /* As variáveis de sessão ficam disponíeis para utilização durante toda a duração ada sesssão, ou seja, enquanto o navegador não for fechado ou o susuário estiver logado. */
-}
+
+    /* As variáveis de sessão ficam disponíeis para utilização durante toda a duração da sesssão, ou seja, enquanto o navegador não for fechado ou o susuário estiver logado. */
+} // fim login
+
+
+
+// Usada em todas as páginas admin
+function logout() {
+    session_start();
+    session_destroy();
+    header("location:../login.php?logout");
+    exit;
+
+} // fim logout

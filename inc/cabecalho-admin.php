@@ -2,6 +2,12 @@
 require_once "funcoes-sessao.php";
 verificaAcesso();
 
+/* Programação do logout/sair
+ 2) Verificar se o link sair foi acionado, e se foi, deslogar o usuário */
+if(isset($_GET["logout"])){
+    logout();
+}
+
 // Guardando o nome da página atual
 $pagina = basename($_SERVER['PHP_SELF']);
 ?>
@@ -40,10 +46,12 @@ $pagina = basename($_SERVER['PHP_SELF']);
             <li class="nav-item">
                 <a class="nav-link" href="meu-perfil.php">Meu perfil</a>
             </li>
-                       
+            
+            <?php if($_SESSION['tipo'] == "admin") { ?>
             <li class="nav-item">
                 <a class="nav-link" href="usuarios.php">Usuários</a>
             </li>
+            <?php } ?>
             
             <li class="nav-item">
                 <a class="nav-link" href="noticias.php">Notícias</a>
@@ -53,7 +61,10 @@ $pagina = basename($_SERVER['PHP_SELF']);
                 <a class="nav-link" href="../index.php" target="_blank">Área pública</a>
             </li>
             <li class="nav-item">
-                <a class="nav-link fw-bold" href=""> <i class="bi bi-x-circle"></i> Sair</a>
+                <!-- Programação logout/sair
+                1) Criar um parâmetro de URL no href. Neste exemplo, criamos com o nome de ?logout (ou ?sair)
+                -->
+                <a class="nav-link fw-bold" href="?logout"> Sair <i class="bi bi-x-circle"></i></a>
             </li>
         </ul>
 

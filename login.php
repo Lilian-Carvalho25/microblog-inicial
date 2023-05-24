@@ -8,6 +8,10 @@ require "inc/cabecalho.php";
 if(isset($_GET["campos_obrigatorios"]) ){
 	// Portanto, essa mensagem será exibida
 	$mensagem = "Você deve preencher e-mail e senha!";
+} elseif(isset($_GET["dados_incorretos"])){
+	$mensagem = "Dados incorretos, verifique e-mail e/ou senha!";
+} elseif(isset($_GET["logout"])){
+	$mensagem = "Voce saiu do sistema.";
 }
 
 ?>
@@ -56,9 +60,15 @@ if(isset($_POST["entrar"])){
 
 	/* Verificação de senha */
 	if( $dadosUsuario != null && password_verify($senha, $dadosUsuario['senha'])) {
-		echo "Pode entrar";
+
+		login($dadosUsuario['id'], $dadosUsuario['nome'], $dadosUsuario['tipo']);
+		header("location:admin/index.php");
+		exit;
+
 	} else {
-		echo "Não pode entrar";
+		// Caso contrário, fique no login e avise o usuário
+		header("location:login.php?dados_incorretos");
+		exit;
 	}
 } // fim if entrar
 
