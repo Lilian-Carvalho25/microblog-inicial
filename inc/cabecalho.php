@@ -30,7 +30,7 @@
           <a class="nav-link" aria-current="page" href="index.php">Home</a>
         </li>
         <li class="nav-item">
-          <a class="nav-link" href="admin/index.php"><i class="bi bi-lock-fill"></i> Área administrativa</a>
+          <a class="nav-link" href="admin/index.php"> Área administrativa <i class="bi bi-lock-fill"></i></a>
         </li>
       </ul>
 
