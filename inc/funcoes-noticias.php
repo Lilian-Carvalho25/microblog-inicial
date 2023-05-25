@@ -34,3 +34,24 @@ function upload($arquivo){
     move_uploaded_file($temporario, $destino);
 
 } // fim upload
+
+
+
+
+// Usada em noticias.php
+function lerNoticias($conexao){
+    // SQL PROVISÓRIO
+    $sql = "SELECT * FROM noticias ORDER BY data DESC";
+    $resultado = mysqli_query($conexao,$sql) or die(mysqli_error($conexao));
+
+    $noticias = [];
+
+    /* Enquanto houver dados de cada notícia no resultado do SELECT SQL, guarde cada uma das notícias e seus dados em uma variável ($noticia) */
+    while($noticia = mysqli_fetch_assoc($resultado)){
+        // "empurre" para o array vazio
+        array_push($noticias, $noticia);
+    }
+
+    return $noticias;
+
+} // fim lerNoticias

@@ -20,7 +20,7 @@ function inserirUsuario($conexao, $nome, $email, $senha, $tipo){
 // Usada em usuarios.php
 function lerUsuarios($conexao){
     // Montando o comando SQL SELECT para leitura dos usuários
-    $sql = " SELECT id, nome, email, tipo FROM usuarios ORDER BY nome";
+    $sql = "SELECT id, nome, email, tipo FROM usuarios ORDER BY nome";
 
     // Guardando o resultado da operação de consulta SELECT
     $resultado = mysqli_query($conexao, $sql)
