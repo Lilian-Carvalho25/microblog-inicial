@@ -1,24 +1,24 @@
 <?php
 require "inc/funcoes-noticias.php";
-require "inc/cabecalho.php"; 
+require "inc/cabecalho.php";
 
-$noticias = lerTodasAsNoticias($conexao);
+$id = $_GET["id"];
+$detalhesDaNoticia = lerDetalhes($conexao, $id);
 ?>
 
 <div class="row my-1 mx-md-n1">
 
     <article class="col-12">
-        <h2> </h2>
+        <h2> <?= $detalhesDaNoticia["titulo"] ?> </h2>
         <p class="font-weight-light">
-            <time>  </time> - <span>Autor da notícia</span>
+            <time> <?= formataData($detalhesDaNoticia["data"]) ?> </time> - <span><?= $detalhesDaNoticia['nome'] ?></span>
         </p>
-        <img src="https://picsum.photos/seed/picsum/200/100" alt="" class="float-left pr-2 img-fluid">
-        <p>  </p>
+        <img src="imagem/<?= $detalhesDaNoticia['imagem'] ?>" alt="" class="float-start pe-3 img-fluid">
+        <p> <?= nl2br($detalhesDaNoticia["texto"]) ?> </p>
     </article>
 
-</div>        
+</div>
 
-<?php 
+<?php
 require_once "inc/rodape.php";
 ?>
-
