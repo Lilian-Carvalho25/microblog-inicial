@@ -121,3 +121,20 @@ function excluirNoticia($conexao, $idNoticia, $idUsuarioLogado, $tipoUsuarioLoga
     mysqli_query($conexao, $sql) or die (mysqli_error($conexao));
 
 } // fim excluirNoticia
+
+
+
+
+function lerTodasAsNoticias($conexao){
+    $sql = "SELECT id, data, titulo, texto, resumo, imagem FROM noticias ORDER BY data DESC";
+
+    $resultado = mysqli_query($conexao, $sql)
+    or die (mysqli_error($conexao));
+
+    $noticias = [];
+
+    while ($noticia = mysqli_fetch_assoc($resultado)){
+        array_push($noticias, $noticia);
+     }
+     return $noticias;
+}
