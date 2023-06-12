@@ -2,10 +2,16 @@
 
 /* Ligação ente o PHP e o banco de dados */
 /* Parâmetros de acesso ao servidor de banco de dados MySQL */
+// $servidor = "localhost";
+// $usuario = "root";
+// $senha = "";
+// $banco = "microblog-inicial";
+
+// Servidor 
 $servidor = "localhost";
-$usuario = "root";
-$senha = "";
-$banco = "microblog-inicial";
+$usuario = "fdwitrfe_microblog";
+$senha = "!Lilian2503";
+$banco = "fdwitrfe_microblog";
 
 /* Usando a função mysqli_connect para conectar ao servidor */
 $conexao = mysqli_connect($servidor, $usuario, $senha, $banco);
