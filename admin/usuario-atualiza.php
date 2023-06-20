@@ -11,8 +11,6 @@ if($_SESSION['tipo'] != "admin"){
 // Capturamos o parâmetro da URL
 $id = $_GET["id"];
 
-/* Chamamos a função (passando conexão e o id do usuário), e após a execução da função recebemos um array associativo contendo os dados do usuário */
-$usuario = lerUmUsuario($conexao, $id);
 
 /* Detectar quando o botão formulário é acionado */
 if(isset($_POST['atualizar'])){

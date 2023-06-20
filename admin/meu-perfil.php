@@ -1,5 +1,22 @@
 <?php 
 require_once "../inc/cabecalho-admin.php";
+require_once "../inc/funcoes-usuarios.php";
+
+$id = $_GET["id"];
+
+if(isset($_POST['atualizar'])){
+
+	$nome = $_POST['nome'];
+	$email = $_POST['email'];
+	$tipo = $_POST['tipo'];
+
+	atualizarUsuario($conexao, $id, $nome, $email, $senha, $tipo);
+
+	header("location:usuarios.php");
+
+} // Fim if/issset botão
+
+$usuario = lerUmUsuario($conexao, $id);
 ?>
 
 
@@ -14,12 +31,12 @@ require_once "../inc/cabecalho-admin.php";
 
 			<div class="mb-3">
 				<label class="form-label" for="nome">Nome:</label>
-				<input class="form-control" type="text" id="nome" name="nome" required>
+				<input value="<?=$usuario['nome']?>" class="form-control" type="text" id="nome" name="nome" required>
 			</div>
 
 			<div class="mb-3">
 				<label class="form-label" for="email">E-mail:</label>
-				<input class="form-control" type="email" id="email" name="email" required>
+				<input value="<?=$usuario['email']?>" class="form-control" type="email" id="email" name="email" required>
 			</div>
 
 			<div class="mb-3">

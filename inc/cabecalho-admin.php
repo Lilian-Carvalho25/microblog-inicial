@@ -1,5 +1,6 @@
 <?php
 require_once "funcoes-sessao.php";
+require_once "funcoes-usuarios.php";
 verificaAcesso();
 
 /* Programação do logout/sair
@@ -10,6 +11,7 @@ if(isset($_GET["logout"])){
 
 // Guardando o nome da página atual
 $pagina = basename($_SERVER['PHP_SELF']);
+
 ?>
 <!DOCTYPE html>
 <html lang="pt-br" class="h-100">
@@ -44,7 +46,7 @@ $pagina = basename($_SERVER['PHP_SELF']);
                 <a class="nav-link" href="index.php">Home</a>
             </li>
             <li class="nav-item">
-                <a class="nav-link" href="meu-perfil.php">Meu perfil</a>
+                <a class="nav-link" href="meu-perfil.php?id=<?=$_SESSION['id']?>">Meu perfil</a>
             </li>
             
             <?php if($_SESSION['tipo'] == "admin") { ?>
