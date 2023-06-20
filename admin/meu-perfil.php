@@ -10,6 +10,12 @@ if(isset($_POST['atualizar'])){
 	$email = $_POST['email'];
 	$tipo = $_POST['tipo'];
 
+    if(empty( $_POST['senha']) || password_verify( $_POST['senha'], $usuario['senha'])) {
+        $senha = $usuario['senha'];
+    } else {
+        $senha = password_hash( $_POST['senha'], PASSWORD_DEFAULT); 
+    }
+
 	atualizarUsuario($conexao, $id, $nome, $email, $senha, $tipo);
 
 	header("location:usuarios.php");
