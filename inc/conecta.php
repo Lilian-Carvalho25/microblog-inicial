@@ -10,7 +10,7 @@
 // Servidor 
 $servidor = "localhost";
 $usuario = "fdwitrfe_microblog";
-$senha = "!Lilian2503";
+$senha = "lilian2503";
 $banco = "fdwitrfe_microblog";
 
 /* Usando a função mysqli_connect para conectar ao servidor */
