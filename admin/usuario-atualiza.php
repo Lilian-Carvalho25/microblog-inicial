@@ -11,6 +11,7 @@ if($_SESSION['tipo'] != "admin"){
 // Capturamos o parâmetro da URL
 $id = $_GET["id"];
 
+$usuario = lerUmUsuario($conexao, $id);
 
 /* Detectar quando o botão formulário é acionado */
 if(isset($_POST['atualizar'])){
