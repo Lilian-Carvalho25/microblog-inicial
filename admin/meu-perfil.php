@@ -2,13 +2,14 @@
 require_once "../inc/cabecalho-admin.php";
 require_once "../inc/funcoes-usuarios.php";
 
-$id = $_GET["id"];
+$id = $_SESSION["id"];
+$usuario = lerUmUsuario($conexao, $id);
 
 if(isset($_POST['atualizar'])){
 
 	$nome = $_POST['nome'];
 	$email = $_POST['email'];
-	$tipo = $_POST['tipo'];
+	//$tipo = $_POST['tipo'];
 
     if(empty( $_POST['senha']) || password_verify( $_POST['senha'], $usuario['senha'])) {
         $senha = $usuario['senha'];
@@ -16,13 +17,12 @@ if(isset($_POST['atualizar'])){
         $senha = password_hash( $_POST['senha'], PASSWORD_DEFAULT); 
     }
 
-	atualizarUsuario($conexao, $id, $nome, $email, $senha, $tipo);
+	atualizarUsuario($conexao, $id, $nome, $email, $senha, $_SESSION['tipo']);
 
-	header("location:usuarios.php");
+	header("location:index.php");
 
 } // Fim if/issset botão
 
-$usuario = lerUmUsuario($conexao, $id);
 ?>
 
 

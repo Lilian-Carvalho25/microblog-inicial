@@ -46,7 +46,7 @@ $pagina = basename($_SERVER['PHP_SELF']);
                 <a class="nav-link" href="index.php">Home</a>
             </li>
             <li class="nav-item">
-                <a class="nav-link" href="meu-perfil.php?id=<?=$_SESSION['id']?>">Meu perfil</a>
+                <a class="nav-link" href="meu-perfil.php">Meu perfil</a>
             </li>
             
             <?php if($_SESSION['tipo'] == "admin") { ?>
