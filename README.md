@@ -4,6 +4,7 @@ Bem vindo(a) ao meu primeiro projeto back-end!. Este é o microblog, um site din
 ## ⚙ Funcionalidades 
 - Inserir, atualizar e excluir notícias <br> 
 - Gerenciamento de perfil <br> 
+- Login e logout <br> 
 - Registro das informações informadas pelos usuários, no banco de dados. <br>
 - Áreas: **pública** e **administrativa.** <br>
 
