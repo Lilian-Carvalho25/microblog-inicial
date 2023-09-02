@@ -21,6 +21,8 @@ São as pastas contidas na pasta **admin** do projeto: index, usuarios, usuario-
 Usuários do tipo **admin**, podem acesssar/modificar **TUDO**. <br>
 Usuários do tipo **editor**, podem acessar/modificar **somente** seus próprios dados e suas próprias notícias.
 
+<img src="https://i.imgur.com/VK3SmIg.png" width="600px" />
+
 ## 🖥️ Tecnologias utilizadas:<br>
 ###
 
